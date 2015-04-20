@@ -1,5 +1,5 @@
 {% extends "wagtailadmin/base.html" %}
-{% load i18n wagtailadmin_tags compress %}
+{% load i18n wagtailadmin_tags  %}
 {% block titletag %}{% blocktrans with title=parent_page.title %}Exploring {{ title }}{% endblocktrans %}{% endblock %}
 {% block bodyclass %}menu-explorer page-explorer {% if ordering == 'ord' %}reordering{% endif %}{% endblock %}
 

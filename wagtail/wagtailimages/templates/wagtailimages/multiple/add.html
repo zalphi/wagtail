@@ -1,11 +1,9 @@
 {% extends "wagtailadmin/base.html" %}
-{% load wagtailimages_tags i18n compress static %}
+{% load wagtailimages_tags i18n pipeline static %}
 {% block titletag %}{% trans "Add multiple images" %}{% endblock %}
 {% block bodyclass %}menu-images{% endblock %}
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailimages/scss/add-multiple.scss" type="text/x-scss" />
-    {% endcompress %}
+    {% stylesheet 'wagtail_css' %}
     {% include "wagtailadmin/shared/tag_field_css.html" %}
 {% endblock %}
 
@@ -54,7 +52,6 @@
 {% endblock %}
 
 {% block extra_js %}
-    {% compress js %}
         <!-- this exact order of plugins is vital -->
         <script src="{{ STATIC_URL }}wagtailimages/js/vendor/load-image.min.js"></script>
         <script src="{{ STATIC_URL }}wagtailimages/js/vendor/canvas-to-blob.min.js"></script>
@@ -67,7 +64,6 @@
 
         <!-- Main script -->
         <script src="{{ STATIC_URL }}wagtailimages/js/add-multiple.js"></script>
-    {% endcompress %}
 
     {% url 'wagtailadmin_tag_autocomplete' as autocomplete_url %}
     <script>

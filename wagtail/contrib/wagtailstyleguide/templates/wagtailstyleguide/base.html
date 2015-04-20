@@ -1,10 +1,8 @@
 {% extends "wagtailadmin/base.html" %}
-{% load wagtailadmin_tags compress i18n static gravatar %}
+{% load wagtailadmin_tags pipeline i18n static gravatar %}
 
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailstyleguide/scss/styleguide.scss" type="text/x-scss" />
-    {% endcompress %}
+    {% stylesheet 'wagtail_css' %}
 {% endblock %}
 
 {% block titletag %}{% trans 'Styleguide' %}{% endblock %}

@@ -1,11 +1,9 @@
 <!DOCTYPE HTML>
-{% load static compress i18n %}
+{% load static pipeline i18n %}
 <html>
     <head>
         <title>{% trans "Preview" %}</title>
-        {% compress css %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/preview.scss" type="text/x-scss" />
-        {% endcompress %}
+    {% stylesheet 'wagtail_css' %}
     </head>
     <body class="ready">
         <div id="loading-spinner-wrapper">

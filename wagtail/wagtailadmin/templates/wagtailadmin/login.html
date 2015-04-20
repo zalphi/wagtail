@@ -1,13 +1,11 @@
 {% extends "wagtailadmin/admin_base.html" %}
-{% load compress %}
+{% load pipeline %}
 {% load i18n %}
 {% block titletag %}{% trans "Sign in" %}{% endblock %}
 {% block bodyclass %}login{% endblock %}
 
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/login.scss" type="text/x-scss" />
-    {% endcompress %}
+    {% stylesheet 'wagtail_css' %}
 {% endblock %}
 
 {% block furniture %}

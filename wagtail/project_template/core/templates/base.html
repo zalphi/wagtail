@@ -1,4 +1,4 @@
-{% templatetag openblock %} load compress static wagtailuserbar {% templatetag closeblock %}
+{% templatetag openblock %} load static wagtailuserbar {% templatetag closeblock %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -12,10 +12,10 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {% templatetag openblock %} compress css {% templatetag closeblock %}
-            {# Global stylesheets #}
-            <link rel="stylesheet" type="text/x-scss" href="{% templatetag openblock %} static 'css/{{ project_name }}.scss' {% templatetag closeblock %}">
-        {% templatetag openblock %} endcompress {% templatetag closeblock %}
+        <!--{% templatetag openblock %} compress css {% templatetag closeblock %}-->
+            <!--{# Global stylesheets #}-->
+            <!--<link rel="stylesheet" type="text/x-scss" href="{% templatetag openblock %} static 'css/{{ project_name }}.scss' {% templatetag closeblock %}">-->
+        <!--{% templatetag openblock %} endcompress {% templatetag closeblock %}-->
 
         {% templatetag openblock %} block extra_css {% templatetag closeblock %}
             {# Override this in templates to add extra stylesheets #}
@@ -27,10 +27,10 @@
 
         {% templatetag openblock %} block content {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
 
-        {% templatetag openblock %} compress js {% templatetag closeblock %}
+        {% templatetag openblock %}{% templatetag closeblock %}
             {# Global javascript #}
             <script type="text/javascript" src="{% templatetag openblock %} static 'js/{{ project_name }}.js' {% templatetag closeblock %}"></script>
-        {% templatetag openblock %} endcompress {% templatetag closeblock %}
+        {% templatetag openblock %}{% templatetag closeblock %}
 
         {% templatetag openblock %} block extra_js {% templatetag closeblock %}
             {# Override this in templates to add extra javascript #}

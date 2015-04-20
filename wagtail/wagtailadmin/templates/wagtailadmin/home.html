@@ -1,13 +1,11 @@
 {% extends "wagtailadmin/base.html" %}
-{% load gravatar compress %}
+{% load gravatar pipeline %}
 {% load i18n %}
 {% block titletag %}{% trans "Dashboard" %}{% endblock %}
 {% block bodyclass %}homepage{% endblock %}
 
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/home.scss" type="text/x-scss" />
-    {% endcompress %}
+   {% stylesheet 'wagtail_css' %}
 {% endblock %}
 
 {% block content %}

@@ -1,15 +1,13 @@
 {% extends "wagtailadmin/base.html" %}
 {% load wagtailusers_tags wagtailimages_tags %}
 {% load i18n %}
-{% load compress %}
+{% load pipeline %}
 
 {% block titletag %}{% trans "Add group" %}{% endblock %}
 {% block bodyclass %}menu-groups{% endblock %}
 
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailusers/scss/groups_edit.scss" type="text/x-scss" />
-    {% endcompress %}
+{% stylesheet 'wagtail_css' %}
 {% endblock %}
 
 {% block content %}

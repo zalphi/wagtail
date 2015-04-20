@@ -1,4 +1,4 @@
-{% load wagtailadmin_tags compress %}
+{% load wagtailadmin_tags  %}
 
 {% comment %}
     Javascript declarations to be included on the 'create page' and 'edit page' views
@@ -10,7 +10,6 @@
     };
 </script>
 
-{% compress js %}
     <script src="{{ STATIC_URL }}wagtailadmin/js/vendor/rangy-core.js"></script>
     <script src="{{ STATIC_URL }}wagtailadmin/js/vendor/hallo.js"></script>
     <script src="{{ STATIC_URL }}wagtailadmin/js/vendor/tag-it.js"></script>
@@ -24,7 +23,6 @@
     <script src="{{ STATIC_URL }}wagtailadmin/js/privacy-indicator.js"></script>
 
     {% hook_output 'insert_editor_js' %}
-{% endcompress %}
 
 {% include "wagtailadmin/shared/datetimepicker_translations.html" %}
 
